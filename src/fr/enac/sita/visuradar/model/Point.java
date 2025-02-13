@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package fr.enac.sita.visuradar.model;
 
 import javafx.beans.property.DoubleProperty;
@@ -17,21 +13,13 @@ public class Point implements IPoint {
     private final DoubleProperty y;
 
     public Point(double x, double y) {
-        this.x = new SimpleDoubleProperty();
-        this.y = new SimpleDoubleProperty();
-        
-        this.x.setValue(x);
-        this.y.setValue(y);
-        
+        this.x = new SimpleDoubleProperty(x);
+        this.y = new SimpleDoubleProperty(y);
     }
 
     public Point(Point p) {
         // Correct Composition: Use interface methods
-        this.x = new SimpleDoubleProperty();
-        this.y = new SimpleDoubleProperty();
-        
-        this.x.setValue(p.getX());
-        this.y.setValue(p.getY());
+        this(p.getX(), p.getY()); // Calls the first constructor
     }
 
     @Override

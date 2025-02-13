@@ -56,6 +56,8 @@ public class cliTest {
         System.out.println(pointsFlew);
         
         System.out.println(P1.toString());
+        Point PX = new Point(P1);
+        System.out.println(PX.toString());
        
     }
 }

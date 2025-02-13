@@ -17,11 +17,11 @@ public class Comet {
                 this.points[i] = new Point(p);
                 break;
             }else if(i == this.points.length-1){
-                this.points[0] = this.points[1];
-                this.points[1] = this.points[2];
-                this.points[2] = this.points[3];
-                this.points[3] = this.points[4];
-                this.points[4] = new Point(p);
+                this.points[0].set(this.points[1]);
+                this.points[1].set(this.points[2]);
+                this.points[2].set(this.points[3]);
+                this.points[3].set(this.points[4]);
+                this.points[4].set(new Point(p));
             }
         }
     }
