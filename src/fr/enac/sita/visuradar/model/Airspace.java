@@ -6,13 +6,12 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
-import javafx.beans.property.DoubleProperty;
 
 /**
  *
  * @author vlada
  */
-public class Airspace implements IBeacon, ISector {
+public class Airspace{
     
     private final Map<String, IBeacon> beacons;
     private final Map<String, ISector> sectors;
@@ -44,84 +43,38 @@ public class Airspace implements IBeacon, ISector {
         return pBeacons;
     }
     
-    
-    
-    
-    
-    //TODO implement interface methods
-    @Override
-    public String getCode() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String getType() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String getFloor() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String getCeiling() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String getName() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String getAcc() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public List<IZone> getSlices() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void setSlices(List<IZone> slices) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public DoubleProperty xProperty() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public DoubleProperty yProperty() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public Double getX() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public Double getY() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void setX(double x) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void setY(double y) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void set(IPoint p) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<ISector> getSectorsList(){
+        List<ISector> sectorsL = new ArrayList<>();
+        for (ISector sector : this.sectors.values()) {
+                sectorsL.add(sector);
+        }
+        return sectorsL;
     }
     
+    public Map<String, IBeacon> getBeaconsByNameMap() {
+        return beacons;
+    }
+
+    public Map<String, ISector> getSectorsByNameMap() {
+        return sectors;
+    }
+    
+    public boolean containsSector(String sector){
+        for (ISector s : this.sectors.values()) {
+            if(s.getName().equals(sector)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean containsBeacon(String beacon){
+        for (IBeacon b : this.beacons.values()) {
+            if(b.getCode().equals(beacon)){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
