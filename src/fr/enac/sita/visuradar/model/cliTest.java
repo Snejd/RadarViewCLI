@@ -10,6 +10,8 @@ public class cliTest {
         CartographyManagerXanthane manager = new CartographyManagerXanthane();
         Airspace air = new Airspace(manager);
         
+        System.out.println(air.getPublicBeacons());
+        
         
         Point P1 = new Point(50,356);
         Point P2 = new Point(50,400);
@@ -23,11 +25,15 @@ public class cliTest {
         Comet pointsFlew = new Comet(P1);
         pointsFlew.addCoordinates(P2);
         pointsFlew.addCoordinates(P3);
+        System.out.println(pointsFlew);
         pointsFlew.addCoordinates(P4);
         pointsFlew.addCoordinates(P5);
         pointsFlew.addCoordinates(P6);
         pointsFlew.addCoordinates(P7);
         
-        System.out.println(air.getX());
+        System.out.println(pointsFlew);
+        
+        System.out.println(P1.toString());
+       
     }
 }

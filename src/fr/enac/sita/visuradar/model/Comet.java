@@ -44,5 +44,18 @@ public class Comet {
     }
     
     
+    @Override
+    public String toString() {
+        String ret = "---------------\nComet points\n";
+        for(int i = 0; i < this.points.length; i++) {
+            if(this.points[i] == null){
+                ret+=("P"+(i+1)+": not inicialized\n");
+            }else{
+                ret+=("P"+(i+1)+": (" + this.points[i].getX() + ", " + this.points[i].getY() + ")\n");
+            }            
+        }
+        ret+="---------------";
+        return ret;
+    }
     
 }
