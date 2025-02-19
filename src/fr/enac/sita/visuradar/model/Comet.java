@@ -51,7 +51,8 @@ public class Comet {
             if(this.points[i] == null){
                 ret+=("P"+(i+1)+": not inicialized\n");
             }else{
-                ret+=("P"+(i+1)+": (" + this.points[i].getX() + ", " + this.points[i].getY() + ")\n");
+                ret+=("P"+(i+1)+": (" + this.points[i].xProperty().toString()
+                        + ", " + this.points[i].yProperty().toString() + ")\n");
             }            
         }
         ret+="---------------";
