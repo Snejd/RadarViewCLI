@@ -33,12 +33,12 @@ public class Point implements IPoint {
     }
 
     @Override
-    public Double getX() {
+    public double getX() {
         return this.x.getValue();
     }
 
     @Override
-    public Double getY() {
+    public double getY() {
         return this.y.getValue();
     }
 

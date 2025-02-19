@@ -22,12 +22,12 @@ public interface IPoint {
     /**
      * Get the abscissa (Cautra coordinates).
      */
-    public Double getX();
+    public double getX();
 
     /**
      * Get the ordinate (Cautra coordinates).
      */
-    public Double getY();
+    public double getY();
 
     /**
      * Set the abscissa (Cautra coordinates).
